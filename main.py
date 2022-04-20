@@ -26,7 +26,9 @@ def generate_password():
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save_password():
     # Validation 1
-    if len(email_entry.get().strip()) == 0 or len(password_entry.get().strip()) == 0:
+    if 0 == len(website_entry.get().strip()) or \
+            0 == len(email_entry.get().strip()) or \
+            0 == len(password_entry.get().strip()):
         messagebox.showerror(title="Field Empty", message="Please fill all value")
         return
 
