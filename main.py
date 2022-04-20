@@ -6,7 +6,6 @@
 """
 from tkinter import *
 from tkinter import messagebox
-from pandas import *
 import password_generator
 import pyperclip
 
