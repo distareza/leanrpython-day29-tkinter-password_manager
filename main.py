@@ -10,6 +10,7 @@ import password_generator
 import pyperclip
 
 PASSWORD_FILE = "password.txt"
+USER_NAME = "myemail@mail.com"
 
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
@@ -24,7 +25,6 @@ def generate_password():
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save_password():
-
     # Validation 1
     if len(email_entry.get().strip()) == 0 or len(password_entry.get().strip()) == 0:
         messagebox.showerror(title="Field Empty", message="Please fill all value")
@@ -44,10 +44,10 @@ def save_password():
 
     # Confirmation
     if not messagebox.askokcancel(title="Please Confirm", message=f"These are the the detail entered : \n"
-                                                                   f"Website : {website_entry.get()} \n"
-                                                                   f"Email : {email_entry.get()}\n"
-                                                                   f"Password : {password_entry.get()}\n"
-                                                                   f"Ok to Confirm"):
+                                                                  f"Website : {website_entry.get()} \n"
+                                                                  f"Email : {email_entry.get()}\n"
+                                                                  f"Password : {password_entry.get()}\n"
+                                                                  f"Ok to Confirm"):
         return
 
     # Saving Entry
@@ -97,6 +97,6 @@ button_add.grid(row=4, column=1, columnspan=2)
 
 website_entry.insert(END, "https://")
 website_entry.focus()
-email_entry.insert(0, "myemail@mail.com")
+email_entry.insert(0, USER_NAME)
 
 window.mainloop()
